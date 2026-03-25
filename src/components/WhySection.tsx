@@ -10,7 +10,7 @@ const points = [
 
 const WhySection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-background">
+    <section className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
@@ -33,7 +33,7 @@ const WhySection = () => {
             {points.map((point, i) => (
               <ScrollReveal key={i} delay={0.2 + i * 0.08}>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-accent-soft flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check size={16} className="text-accent" />
                   </div>
                   <div>

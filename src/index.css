@@ -6,43 +6,58 @@
 
 @layer base {
   :root {
-    --background: 222 30% 95%;
-    --foreground: 220 45% 20%;
+    /* Parchment — main page bg, navbar, contact */
+    --background: 36 50% 97%;
+    /* Espresso — headings, darkest tone */
+    --foreground: 27 52% 11%;
 
-    --card: 220 45% 33%;
-    --card-foreground: 0 0% 100%;
+    /* White — card bg */
+    --card: 0 0% 100%;
+    --card-foreground: 27 52% 11%;
 
-    --popover: 222 30% 95%;
-    --popover-foreground: 220 45% 20%;
+    --popover: 36 50% 97%;
+    --popover-foreground: 27 52% 11%;
 
-    --primary: 220 45% 20%;
+    /* Espresso — footer bg, dark banners */
+    --primary: 27 52% 11%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 45% 33%;
-    --secondary-foreground: 0 0% 100%;
+    /* Sand — alternating section bg */
+    --secondary: 33 33% 93%;
+    --secondary-foreground: 27 52% 11%;
 
-    --muted: 222 30% 90%;
-    --muted-foreground: 220 15% 35%;
+    /* Sand / Walnut */
+    --muted: 33 33% 93%;
+    --muted-foreground: 27 17% 40%;
 
-    --accent: 40 66% 48%;
+    /* Terracotta — CTA, interactive only */
+    --accent: 17 52% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 20% 85%;
-    --input: 222 20% 85%;
-    --ring: 40 66% 48%;
+    /* Linen — borders */
+    --border: 30 25% 88%;
+    --input: 30 25% 88%;
+    /* Terracotta focus ring */
+    --ring: 17 52% 47%;
 
     --radius: 0.625rem;
 
     /* Custom tokens */
-    --surface-raised: 220 45% 33%;
-    --surface-sunken: 220 45% 20%;
-    --accent-soft: 40 50% 90%;
-    --accent-hover: 40 66% 40%;
-    
-    --hero-bg: 220 45% 20%;
+    /* Cream — hero, about, alternating light */
+    --cream: 30 67% 96%;
+    /* Sand */
+    --surface-raised: 33 33% 93%;
+    /* Espresso */
+    --surface-sunken: 27 52% 11%;
+    /* Blush tint — badges, pills, icon containers */
+    --accent-soft: 20 80% 92%;
+    /* Driftwood — sub-labels, meta text */
+    --driftwood: 27 17% 58%;
+
+    --hero-bg: 30 67% 96%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -84,11 +99,17 @@
 
 @layer utilities {
   .section-label {
-    @apply text-xs font-semibold uppercase tracking-[0.15em] text-accent;
+    @apply text-xs font-semibold uppercase tracking-[0.15em];
+    color: hsl(var(--accent));
   }
 
   .section-label-light {
-    @apply text-xs font-semibold uppercase tracking-[0.15em] text-accent;
+    @apply text-xs font-semibold uppercase tracking-[0.15em];
+    color: hsl(var(--accent));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
   }
 
   .bg-surface-raised {
@@ -97,6 +118,14 @@
 
   .bg-surface-sunken {
     background-color: hsl(var(--surface-sunken));
+  }
+
+  .bg-accent-soft {
+    background-color: hsl(var(--accent-soft));
+  }
+
+  .text-driftwood {
+    color: hsl(var(--driftwood));
   }
 
   .grid-pattern {

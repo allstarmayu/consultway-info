@@ -40,7 +40,7 @@ const StatsBar = () => {
   const inView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section ref={ref} className="bg-secondary py-16 lg:py-20 border-y border-border/50">
+    <section ref={ref} className="bg-secondary py-16 lg:py-20 border-y border-border">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
           {stats.map((stat, i) => (
@@ -48,7 +48,7 @@ const StatsBar = () => {
               <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
                 <AnimatedNumber target={stat.value} suffix={stat.suffix} inView={inView} />
               </div>
-              <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
+              <p className="text-sm text-driftwood font-medium">{stat.label}</p>
             </div>
           ))}
         </div>

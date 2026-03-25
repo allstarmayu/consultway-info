@@ -21,7 +21,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-background">
+    <section id="services" className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="section-label text-center mb-4">WHAT WE DO</p>
@@ -40,12 +40,12 @@ const ServicesSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <ScrollReveal key={i} delay={0.2 + i * 0.1}>
-              <div className="group bg-foreground rounded-2xl p-8 h-full hover:shadow-xl hover:shadow-foreground/10 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-6 group-hover:bg-accent/25 transition-colors duration-300">
+              <div className="group bg-card rounded-2xl p-8 h-full border border-border hover:shadow-lg hover:shadow-foreground/[0.04] transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors duration-300">
                   <service.icon size={22} className="text-accent" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary-foreground mb-3">{service.title}</h3>
-                <p className="text-primary-foreground/50 leading-relaxed text-[15px]">{service.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[15px]">{service.description}</p>
               </div>
             </ScrollReveal>
           ))}

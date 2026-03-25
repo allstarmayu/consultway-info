@@ -20,8 +20,8 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-40" />
+    <section id="process" className="py-24 lg:py-32 bg-cream relative overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-30" />
       <div className="relative z-10 container mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="section-label text-center mb-4">THE PROCESS</p>
