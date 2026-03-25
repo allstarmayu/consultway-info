@@ -5,7 +5,7 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="bg-navy py-16 lg:py-20">
+    <footer className="bg-foreground py-16 lg:py-20">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>

@@ -6,44 +6,41 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 25% 12%;
+    --background: 150 20% 99%;
+    --foreground: 200 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 12%;
+    --card-foreground: 200 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 12%;
+    --popover-foreground: 200 15% 15%;
 
-    --primary: 213 58% 11%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 200 15% 15%;
+    --primary-foreground: 150 20% 99%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 213 58% 11%;
+    --secondary: 160 15% 95%;
+    --secondary-foreground: 200 15% 15%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 10% 45%;
+    --muted: 160 10% 94%;
+    --muted-foreground: 200 8% 46%;
 
-    --accent: 36 72% 52%;
+    --accent: 172 50% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 36 72% 52%;
+    --border: 170 12% 89%;
+    --input: 170 12% 89%;
+    --ring: 172 50% 40%;
 
     --radius: 0.625rem;
 
     /* Custom tokens */
-    --navy: 213 58% 11%;
-    --navy-light: 213 45% 18%;
-    --navy-lighter: 213 35% 25%;
-    --off-white: 0 0% 96%;
-    --warm-grey: 210 10% 45%;
-    --glass-bg: 213 45% 15%;
-    --glass-border: 213 30% 28%;
+    --surface-raised: 160 15% 97%;
+    --surface-sunken: 160 12% 93%;
+    --accent-soft: 172 40% 94%;
+    --accent-hover: 172 55% 35%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -92,31 +89,18 @@
     @apply text-xs font-semibold uppercase tracking-[0.15em] text-accent;
   }
 
-  .bg-navy {
-    background-color: hsl(var(--navy));
+  .bg-surface-raised {
+    background-color: hsl(var(--surface-raised));
   }
 
-  .bg-navy-light {
-    background-color: hsl(var(--navy-light));
-  }
-
-  .bg-off-white {
-    background-color: hsl(var(--off-white));
-  }
-
-  .text-navy {
-    color: hsl(var(--navy));
-  }
-
-  .bg-glass {
-    background-color: hsl(var(--glass-bg));
-    border: 1px solid hsl(var(--glass-border));
+  .bg-surface-sunken {
+    background-color: hsl(var(--surface-sunken));
   }
 
   .grid-pattern {
     background-image: 
-      linear-gradient(hsl(var(--navy-lighter) / 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--navy-lighter) / 0.3) 1px, transparent 1px);
+      linear-gradient(hsl(var(--accent) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--accent) / 0.07) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 }
