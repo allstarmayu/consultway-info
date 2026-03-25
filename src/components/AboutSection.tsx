@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-background">
+    <section id="about" className="py-24 lg:py-32 bg-cream">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -30,14 +30,14 @@ const AboutSection = () => {
           </div>
 
           <ScrollReveal delay={0.25} direction="right">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-secondary">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent" />
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-border">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center px-8">
-                  <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-accent-soft flex items-center justify-center mx-auto mb-4">
                     <span className="text-accent text-2xl font-bold">C</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">Team photo coming soon</p>
+                  <p className="text-driftwood text-sm">Team photo coming soon</p>
                 </div>
               </div>
             </div>

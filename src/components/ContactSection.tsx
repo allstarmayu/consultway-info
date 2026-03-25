@@ -34,45 +34,45 @@ const ContactSection = () => {
               <div className="space-y-5">
                 <div>
                   <p className="text-sm font-medium text-foreground mb-1">Email</p>
-                  <p className="text-muted-foreground text-sm">contact@consultway.info</p>
+                  <p className="text-driftwood text-sm">contact@consultway.info</p>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground mb-1">Phone</p>
-                  <p className="text-muted-foreground text-sm">Available after inquiry</p>
+                  <p className="text-driftwood text-sm">Available after inquiry</p>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground mb-1">Location</p>
-                  <p className="text-muted-foreground text-sm">India</p>
+                  <p className="text-driftwood text-sm">India</p>
                 </div>
               </div>
             </ScrollReveal>
           </div>
 
           <ScrollReveal delay={0.15} direction="right">
-            <form onSubmit={handleSubmit} className="bg-secondary/50 rounded-2xl p-8 border border-border/50 space-y-5">
+            <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 border border-border space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Full Name *</label>
-                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Company Name *</label>
-                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Business Email *</label>
-                  <input required type="email" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input required type="email" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input type="tel" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground mb-1.5 block">Industry / Sector</label>
-                <select className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow">
+                <select className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow">
                   <option value="">Select your sector</option>
                   <option>Infrastructure</option>
                   <option>Solar and Renewable Energy</option>
@@ -87,7 +87,7 @@ const ContactSection = () => {
                   required
                   rows={4}
                   placeholder="Tell us about your business and what you are looking for"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow resize-none"
                 />
               </div>
 
@@ -103,7 +103,7 @@ const ContactSection = () => {
                   </>
                 )}
               </button>
-              <p className="text-center text-muted-foreground text-xs">We respond within 24 hours</p>
+              <p className="text-center text-driftwood text-xs">We respond within 24 hours</p>
             </form>
           </ScrollReveal>
         </div>

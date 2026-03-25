@@ -24,7 +24,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-background">
+    <section id="testimonials" className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="section-label text-center mb-4">CLIENT FEEDBACK</p>
@@ -38,12 +38,12 @@ const TestimonialsSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <ScrollReveal key={i} delay={0.2 + i * 0.1}>
-              <div className="bg-secondary/50 rounded-2xl p-8 h-full flex flex-col border border-border/50 hover:shadow-lg hover:shadow-foreground/[0.03] transition-shadow duration-300">
+              <div className="bg-card rounded-2xl p-8 h-full flex flex-col border border-border hover:shadow-lg hover:shadow-foreground/[0.03] transition-shadow duration-300">
                 <Quote size={24} className="text-accent/40 mb-4 flex-shrink-0" />
-                <p className="text-foreground/80 leading-relaxed mb-6 flex-1 text-[15px]">"{t.quote}"</p>
+                <p className="text-muted-foreground leading-relaxed mb-6 flex-1 text-[15px]">"{t.quote}"</p>
                 <div>
                   <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                  <p className="text-muted-foreground text-xs">{t.title}, {t.company}</p>
+                  <p className="text-driftwood text-xs">{t.title}, {t.company}</p>
                 </div>
               </div>
             </ScrollReveal>
