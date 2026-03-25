@@ -3,12 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'hsl(260, 20%, 52%)' }}>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'hsl(162, 35%, 16%)' }}>
       {/* Animated grid */}
       <div className="absolute inset-0 grid-pattern animate-grid-drift opacity-20" />
       
       {/* Radial fade */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(260_20%_52%)_75%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(162_35%_16%)_75%)]" />
 
       <div className="relative z-10 container mx-auto px-6 lg:px-8 text-center max-w-4xl">
         <motion.p
