@@ -26,7 +26,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-off-white">
+    <section className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
         <ScrollReveal>
           <p className="section-label text-center mb-4">FREQUENTLY ASKED QUESTIONS</p>

@@ -3,8 +3,8 @@ import ScrollReveal from "./ScrollReveal";
 
 const MidCTA = () => {
   return (
-    <section className="py-24 lg:py-28 bg-navy relative overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-15" />
+    <section className="py-24 lg:py-28 bg-foreground relative overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-10" />
       <div className="relative z-10 container mx-auto px-6 lg:px-8 text-center max-w-3xl">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-[1.1] mb-6">

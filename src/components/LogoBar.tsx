@@ -6,7 +6,7 @@ const placeholderLogos = [
 
 const LogoBar = () => {
   return (
-    <section className="py-20 lg:py-24 bg-off-white">
+    <section className="py-20 lg:py-24 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="section-label text-center mb-3">TRUSTED BY</p>
