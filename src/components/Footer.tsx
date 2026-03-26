@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <a href="#home" className="flex items-center">
-              <img src={logo} alt="Consultway Infotech" className="h-14 w-auto object-contain" />
+              <img src={logo} alt="Consultway Infotech" className="h-24 w-auto object-contain" />
             </a>
             <p className="text-primary-foreground/40 text-sm mt-4 leading-relaxed max-w-xs">
               Connecting private sector companies with government-backed infrastructure and solar projects across India.
