@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <a href="#home" className="flex items-center gap-2">
-              <img src={logo} alt="Consultway Infotech" className="h-12 w-12 rounded-full object-cover" />
+              <img src={logo} alt="Consultway Infotech" className="h-16 w-16 object-contain" />
               <span className="text-xl font-bold text-primary-foreground tracking-tight">Consultway<span className="text-accent">.</span></span>
             </a>
             <p className="text-primary-foreground/40 text-sm mt-4 leading-relaxed max-w-xs">
