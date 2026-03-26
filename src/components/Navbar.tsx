@@ -33,8 +33,9 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
-          <a href="#home" className="text-xl font-bold text-foreground tracking-tight">
-            Consultway<span className="text-accent">.</span>
+          <a href="#home" className="flex items-center gap-2">
+            <img src={logo} alt="Consultway Infotech" className="h-9 w-9 rounded-full object-cover" />
+            <span className="text-xl font-bold text-foreground tracking-tight">Consultway<span className="text-accent">.</span></span>
           </a>
 
           <div className="hidden lg:flex items-center gap-8">

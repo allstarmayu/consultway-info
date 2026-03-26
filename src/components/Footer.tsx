@@ -11,8 +11,9 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <a href="#home" className="text-xl font-bold text-primary-foreground tracking-tight">
-              Consultway<span className="text-accent">.</span>
+            <a href="#home" className="flex items-center gap-2">
+              <img src={logo} alt="Consultway Infotech" className="h-9 w-9 rounded-full object-cover" />
+              <span className="text-xl font-bold text-primary-foreground tracking-tight">Consultway<span className="text-accent">.</span></span>
             </a>
             <p className="text-primary-foreground/40 text-sm mt-4 leading-relaxed max-w-xs">
               Connecting private sector companies with government-backed infrastructure and solar projects across India.
