@@ -38,13 +38,6 @@ const ProcessSection = () => {
         </ScrollReveal>
 
         <div ref={ref} className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
-          {/* Subtle dotted connecting line (desktop only) */}
-          <motion.div
-            className="hidden md:block absolute top-7 left-[10%] right-[10%] h-[1px] border-t border-dashed border-accent/30"
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 1, delay: 0.8 }}
-          />
 
           {steps.map((step, i) => (
             <motion.div
