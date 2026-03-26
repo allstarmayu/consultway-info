@@ -1,3 +1,5 @@
+import logo from "@/assets/consultway-logo.jpeg";
+
 const footerLinks = {
   Company: ["About", "Services", "How It Works", "Contact"],
   Resources: ["FAQ", "Testimonials", "Privacy Policy", "Terms of Service"],
