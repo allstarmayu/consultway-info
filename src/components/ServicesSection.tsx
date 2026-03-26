@@ -1,5 +1,7 @@
+import { motion, useInView } from "framer-motion";
 import { Landmark, Sun, Handshake } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { useRef } from "react";
 
 const services = [
   {
@@ -19,7 +21,24 @@ const services = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      delay: 0.2 + i * 0.15,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
 const ServicesSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.2 });
+
   return (
     <section id="services" className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
@@ -37,17 +56,30 @@ const ServicesSection = () => {
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={ref} className="grid md:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <ScrollReveal key={i} delay={0.2 + i * 0.1}>
-              <div className="group bg-card rounded-2xl p-8 h-full border border-border hover:shadow-lg hover:shadow-foreground/[0.04] transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors duration-300">
-                  <service.icon size={22} className="text-accent" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-[15px]">{service.description}</p>
-              </div>
-            </ScrollReveal>
+            <motion.div
+              key={i}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              whileHover={{
+                y: -8,
+                boxShadow: "0 20px 40px hsl(var(--foreground) / 0.08)",
+                transition: { duration: 0.3 },
+              }}
+              className="group bg-card rounded-2xl p-8 h-full border border-border cursor-default transition-colors duration-300"
+            >
+              <motion.div
+                className="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent/15"
+                whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+              >
+                <service.icon size={22} className="text-accent" />
+              </motion.div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">{service.description}</p>
+            </motion.div>
           ))}
         </div>
       </div>

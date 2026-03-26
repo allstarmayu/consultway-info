@@ -1,5 +1,7 @@
+import { motion, useInView } from "framer-motion";
 import { Check } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { useRef } from "react";
 
 const points = [
   { title: "Exclusive project pipeline", desc: "A curated database of government projects that are not publicly advertised, updated regularly." },
@@ -9,6 +11,9 @@ const points = [
 ];
 
 const WhySection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.2 });
+
   return (
     <section className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
@@ -29,19 +34,37 @@ const WhySection = () => {
             </ScrollReveal>
           </div>
 
-          <div className="space-y-6">
+          <div ref={ref} className="space-y-6">
             {points.map((point, i) => (
-              <ScrollReveal key={i} delay={0.2 + i * 0.08}>
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-lg bg-accent-soft flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check size={16} className="text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">{point.title}</h3>
-                    <p className="text-muted-foreground text-[15px] leading-relaxed">{point.desc}</p>
-                  </div>
+              <motion.div
+                key={i}
+                className="flex gap-4"
+                initial={{ opacity: 0, x: 30 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.15 + i * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <motion.div
+                  className="w-8 h-8 rounded-lg bg-accent-soft flex items-center justify-center flex-shrink-0 mt-0.5"
+                  initial={{ scale: 0 }}
+                  animate={inView ? { scale: 1 } : {}}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.3 + i * 0.1,
+                    type: "spring",
+                    stiffness: 300,
+                  }}
+                >
+                  <Check size={16} className="text-accent" />
+                </motion.div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">{point.title}</h3>
+                  <p className="text-muted-foreground text-[15px] leading-relaxed">{point.desc}</p>
                 </div>
-              </ScrollReveal>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,5 +1,7 @@
+import { motion, useInView } from "framer-motion";
 import { Quote } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { useRef } from "react";
 
 const testimonials = [
   {
@@ -23,6 +25,9 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.2 });
+
   return (
     <section id="testimonials" className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-8">
@@ -35,18 +40,37 @@ const TestimonialsSection = () => {
           </h2>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={ref} className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <ScrollReveal key={i} delay={0.2 + i * 0.1}>
-              <div className="bg-card rounded-2xl p-8 h-full flex flex-col border border-border hover:shadow-lg hover:shadow-foreground/[0.03] transition-shadow duration-300">
+            <motion.div
+              key={i}
+              className="bg-card rounded-2xl p-8 h-full flex flex-col border border-border cursor-default"
+              initial={{ opacity: 0, y: 30, rotateX: 8 }}
+              animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+              transition={{
+                duration: 0.7,
+                delay: 0.15 + i * 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{
+                y: -6,
+                boxShadow: "0 16px 40px hsl(var(--foreground) / 0.06)",
+                transition: { duration: 0.3 },
+              }}
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={inView ? { scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.4 + i * 0.12, type: "spring" }}
+              >
                 <Quote size={24} className="text-accent/40 mb-4 flex-shrink-0" />
-                <p className="text-muted-foreground leading-relaxed mb-6 flex-1 text-[15px]">"{t.quote}"</p>
-                <div>
-                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                  <p className="text-driftwood text-xs">{t.title}, {t.company}</p>
-                </div>
+              </motion.div>
+              <p className="text-muted-foreground leading-relaxed mb-6 flex-1 text-[15px]">"{t.quote}"</p>
+              <div>
+                <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                <p className="text-driftwood text-xs">{t.title}, {t.company}</p>
               </div>
-            </ScrollReveal>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,4 +1,6 @@
+import { motion, useInView } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
+import { useRef } from "react";
 
 const steps = [
   {
@@ -19,9 +21,12 @@ const steps = [
 ];
 
 const ProcessSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
     <section id="process" className="py-24 lg:py-32 bg-cream relative overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute inset-0 grid-pattern opacity-20" />
       <div className="relative z-10 container mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="section-label text-center mb-4">THE PROCESS</p>
@@ -32,17 +37,46 @@ const ProcessSection = () => {
           </h2>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div ref={ref} className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
+          {/* Animated connecting line (desktop only) */}
+          <motion.div
+            className="hidden md:block absolute top-12 left-[20%] right-[20%] h-[2px] bg-accent/20"
+            initial={{ scaleX: 0 }}
+            animate={inView ? { scaleX: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            style={{ originX: 0 }}
+          />
+
           {steps.map((step, i) => (
-            <ScrollReveal key={i} delay={0.2 + i * 0.1}>
-              <div className="relative">
-                <span className="text-6xl font-bold text-accent/15 absolute -top-4 -left-2">{step.number}</span>
-                <div className="pt-10">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-[15px]">{step.description}</p>
-                </div>
-              </div>
-            </ScrollReveal>
+            <motion.div
+              key={i}
+              className="relative"
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.7,
+                delay: 0.3 + i * 0.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              {/* Animated step number */}
+              <motion.div
+                className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 relative z-10"
+                initial={{ scale: 0, rotate: -20 }}
+                animate={inView ? { scale: 1, rotate: 0 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.4 + i * 0.2,
+                  ease: [0.22, 1, 0.36, 1],
+                  type: "spring",
+                  stiffness: 200,
+                }}
+              >
+                <span className="text-accent font-bold text-lg">{step.number}</span>
+              </motion.div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">{step.description}</p>
+            </motion.div>
           ))}
         </div>
       </div>
