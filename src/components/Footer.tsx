@@ -1,4 +1,4 @@
-import logo from "@/assets/consultway-logo.jpeg";
+import logo from "@/assets/consultway-logo.svg";
 
 const footerLinks = {
   Company: ["About", "Services", "How It Works", "Contact"],
