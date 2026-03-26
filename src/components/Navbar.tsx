@@ -33,7 +33,7 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
-          <a href="#home" className="flex items-center gap-2">
+          <a href="#/" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 cursor-pointer">
             <span className="text-xl font-bold text-foreground tracking-tight">Consultway<span className="text-accent">.</span></span>
           </a>
 
