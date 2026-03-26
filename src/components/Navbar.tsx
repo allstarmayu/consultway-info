@@ -34,7 +34,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
           <a href="#home" className="flex items-center">
-            <img src={logo} alt="Consultway Infotech" className="h-16 w-16 object-contain" />
+            <img src={logo} alt="Consultway Infotech" className="h-14 w-auto object-contain" />
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
