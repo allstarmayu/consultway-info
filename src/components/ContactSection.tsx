@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
@@ -49,30 +50,35 @@ const ContactSection = () => {
           </div>
 
           <ScrollReveal delay={0.15} direction="right">
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 border border-border space-y-5">
+            <motion.form
+              onSubmit={handleSubmit}
+              className="bg-card rounded-2xl p-8 border border-border space-y-5"
+              whileHover={{ boxShadow: "0 20px 50px hsl(var(--foreground) / 0.06)" }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Full Name *</label>
-                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Company Name *</label>
-                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input required type="text" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Business Email *</label>
-                  <input required type="email" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input required type="email" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow" />
+                  <input type="tel" className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200" />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground mb-1.5 block">Industry / Sector</label>
-                <select className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow">
+                <select className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200">
                   <option value="">Select your sector</option>
                   <option>Infrastructure</option>
                   <option>Solar and Renewable Energy</option>
@@ -87,14 +93,16 @@ const ContactSection = () => {
                   required
                   rows={4}
                   placeholder="Tell us about your business and what you are looking for"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-shadow resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 resize-none"
                 />
               </div>
 
-              <button
+              <motion.button
                 type="submit"
                 disabled={submitted}
-                className="w-full py-3.5 rounded-lg bg-accent text-accent-foreground font-semibold text-sm flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all duration-200 disabled:opacity-70"
+                className="w-full py-3.5 rounded-lg bg-accent text-accent-foreground font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-70 transition-colors duration-200"
+                whileHover={{ scale: 1.02, boxShadow: "0 8px 25px hsl(var(--accent) / 0.3)" }}
+                whileTap={{ scale: 0.98 }}
               >
                 {submitted ? "Inquiry Sent ✓" : (
                   <>
@@ -102,9 +110,9 @@ const ContactSection = () => {
                     <Send size={16} />
                   </>
                 )}
-              </button>
+              </motion.button>
               <p className="text-center text-driftwood text-xs">We respond within 24 hours</p>
-            </form>
+            </motion.form>
           </ScrollReveal>
         </div>
       </div>
